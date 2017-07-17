@@ -2,14 +2,14 @@
 
 one:
   course: one
-  tittle: MyString
+  title: MyString
   description: MyText
   video_url: MyString
   image: MyString
 
 two:
   course: two
-  tittle: MyString
+  title: MyString
   description: MyText
   video_url: MyString
   image: MyString
