@@ -4,7 +4,7 @@ ActiveAdmin.register Task do
 #
 # permit_params :list, :of, :attributes, :on, :model
 
-permit_params :course_id, :title, :description, :video_url, :image
+permit_params :course_id, :title, :description, :video_url, :image, :preview
 
 
 
@@ -18,6 +18,7 @@ index do
   column :image
   column :created_at
   column :updated_at
+  column :preview
   actions
 end
 
@@ -31,6 +32,7 @@ end
  			task.image.present? ? image_tag(task.image.url, height: 300) : content_tag(:span, 'No Image')
 
  		end
+    row :preview
  	end
  end
 
@@ -42,7 +44,9 @@ end
  		f.input :title
  		f.input :description
  		f.input :video_url
+    f.input :preview
  		f.input :image, hint: task.image.present? ? image_tag(task.image.url, height: 100) : content_tag(:span, 'No Image')
+
  	end
  	f.actions
  end
